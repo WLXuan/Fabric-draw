@@ -1,113 +1,83 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li>
-        <a
-          href="https://vuejs.org"
-          target="_blank"
-        >
-          Core Docs
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://forum.vuejs.org"
-          target="_blank"
-        >
-          Forum
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://chat.vuejs.org"
-          target="_blank"
-        >
-          Community Chat
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://twitter.com/vuejs"
-          target="_blank"
-        >
-          Twitter
-        </a>
-      </li>
-      <br>
-      <li>
-        <a
-          href="http://vuejs-templates.github.io/webpack/"
-          target="_blank"
-        >
-          Docs for This Template
-        </a>
-      </li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li>
-        <a
-          href="http://router.vuejs.org/"
-          target="_blank"
-        >
-          vue-router
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vuex.vuejs.org/"
-          target="_blank"
-        >
-          vuex
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vue-loader.vuejs.org/"
-          target="_blank"
-        >
-          vue-loader
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-        >
-          awesome-vue
-        </a>
-      </li>
-    </ul>
+  <div>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" >Fabric Draw</a>
+        </div>
+        <div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">iOS</a></li>
+            <li><a href="#">SVN</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Java <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#">jmeter</a></li>
+                <li><a href="#">EJB</a></li>
+                <li><a href="#">Jasper Report</a></li>
+                <li class="divider"></li>
+                <li><a href="#">分离的链接</a></li>
+                <li class="divider"></li>
+                <li><a href="#">另一个分离的链接</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div id="visualization" class="vis-container m-auto"></div>
+    <div id="mynetwork"></div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'fabric-draw',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
   }
 }
+// var nodes = new vis.DataSet([
+//   { id: 1, label: "Node 1" },
+//   { id: 2, label: "Node 2" },
+//   { id: 3, label: "Node 3" },
+//   { id: 4, label: "Node 4" },
+//   { id: 5, label: "Node 5" },
+// ]);
+//
+// // create an array with edges
+// var edges = new vis.DataSet([
+//   { from: 1, to: 3 },
+//   { from: 1, to: 2 },
+//   { from: 2, to: 4 },
+//   { from: 2, to: 5 },
+//   { from: 3, to: 3 },
+// ]);
+//
+// // create a network
+// var container = document.getElementById("mynetwork");
+// var data = {
+//   nodes: nodes,
+//   edges: edges,
+// };
+// var options = {};
+// var network = new vis.Network(container, data, options);
 </script>
+
+import Vis from "vis";
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
+.vis-container {
+  width: 960px;
+  height: 540px;
+  background-color: red;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+.navbar {
+
 }
 </style>
